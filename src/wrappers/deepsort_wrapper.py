@@ -31,7 +31,7 @@ class DeepSortWrapper:
         nms_max_overlap: float = 1.0,
         max_iou_distance: float = 0.7,
         max_age: int = 70,
-        n_init: int = 1,
+        n_init: int = 3,
         nn_budget: int = 100,
     ):
         """Initialize DeepSort tracker.
