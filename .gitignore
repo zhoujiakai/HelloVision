@@ -77,3 +77,7 @@ dmypy.json
 
 # Logs
 *.log
+
+# Model weights
+thirdparty/*/weights/*.pt
+thirdparty/openpose/data/*.pth
