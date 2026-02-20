@@ -10,7 +10,11 @@ This file serves as a central place for project-specific context and guidelines 
 
 ## Development Guidelines
 
-<!-- Add coding standards, conventions, and best practices here -->
+运行代码前先激活conda环境：`conda activate HelloVision`
+
+遇到需要添加的依赖包，添加到`requirements.txt`
+
+包装类使用示例见`wrappers/`中的`main函数`
 
 ## Project Structure
 
