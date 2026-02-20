@@ -80,5 +80,6 @@ dmypy.json
 
 # Model weights
 thirdparty/*/weights/*.pt
+thirdparty/*/deep_sort/deep/checkpoint/*.pth
 thirdparty/openpose18k/data/*.pth
 outputs/

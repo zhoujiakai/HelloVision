@@ -27,3 +27,7 @@ ultralytics>=8.2.64
 
 # OpenPose dependencies
 # pycocotools  # Only needed for training/validation, not inference
+
+# DeepSort dependencies
+scikit-learn>=0.22.2
+easydict>=1.13
