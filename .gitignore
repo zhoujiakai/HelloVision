@@ -81,3 +81,4 @@ dmypy.json
 # Model weights
 thirdparty/*/weights/*.pt
 thirdparty/openpose18k/data/*.pth
+outputs/
