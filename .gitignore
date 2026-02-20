@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.pbxuser
+*.perspectivev3
+*.mode1v3
+*.moved-aside
+DerivedData
+*.ipa
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.build/
+*.swiftpm
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Code Injection
+iOSInjectionProject/
+
+# Junk files
+*.swp
+*~.nib
+*.bak
