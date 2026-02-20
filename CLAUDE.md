@@ -29,7 +29,7 @@ This file serves as a central place for project-specific context and guidelines 
 
 - thirdparty：集成进来的模型源代码
     - yolov5：yolov5的模型源代码
-    - openpose：openpose的模型源代码
+    - openpose18k：18关节点的人体姿态估计模型源代码
     - deepsort：deepsort的模型源代码
 
 ## Important Notes
@@ -39,10 +39,10 @@ This file serves as a central place for project-specific context and guidelines 
 模型的原始代码仓库：
 
 - yolov5：https://github.com/ultralytics/yolov5
-- openpose：https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
+- openpose18k：https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
 
 自行下载权重到指定文件夹：
 
 - yolov5权重：`curl -L -o thirdparty/yolov5/weights/yolov5m.pt https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5m.pt`
 
-- openpose权重：`curl -L https://download.01.org/opencv/openvino_training_extensions/models/human_pose_estimation/checkpoint_iter_370000.pth -o thirdparty/openpose/data/checkpoint_iter_370000.pth`
+- openpose18k权重：`curl -L https://download.01.org/opencv/openvino_training_extensions/models/human_pose_estimation/checkpoint_iter_370000.pth -o thirdparty/openpose18k/data/checkpoint_iter_370000.pth`
