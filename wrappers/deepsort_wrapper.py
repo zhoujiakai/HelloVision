@@ -9,7 +9,7 @@ import numpy as np
 import torch
 
 # Add deepsort to path
-DEEPSORT_ROOT = Path(__file__).resolve().parents[2] / "thirdparty" / "deepsort"
+DEEPSORT_ROOT = Path(__file__).resolve().parents[1] / "thirdparty" / "deepsort"
 if str(DEEPSORT_ROOT) not in sys.path:
     sys.path.insert(0, str(DEEPSORT_ROOT))
 

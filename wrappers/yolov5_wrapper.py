@@ -9,7 +9,7 @@ import numpy as np
 import torch
 
 # Add yolov5 to path
-YOLOV5_ROOT = Path(__file__).resolve().parents[2] / "thirdparty" / "yolov5"
+YOLOV5_ROOT = Path(__file__).resolve().parents[1] / "thirdparty" / "yolov5"
 if str(YOLOV5_ROOT) not in sys.path:
     sys.path.insert(0, str(YOLOV5_ROOT))
 
@@ -189,7 +189,7 @@ def main():
         )
 
     # Save result
-    output_dir = Path(__file__).parents[2] / "outputs"
+    output_dir = Path(__file__).parents[1] / "outputs"
     output_dir.mkdir(exist_ok=True)
     output_path = output_dir / "yolov5_result.jpg"
     cv2.imwrite(str(output_path), img)

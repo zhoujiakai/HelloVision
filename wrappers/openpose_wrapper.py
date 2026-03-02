@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 # Add openpose to path
-OPENPOSE_ROOT = Path(__file__).resolve().parents[2] / "thirdparty" / "openpose18k"
+OPENPOSE_ROOT = Path(__file__).resolve().parents[1] / "thirdparty" / "openpose18k"
 if str(OPENPOSE_ROOT) not in sys.path:
     sys.path.insert(0, str(OPENPOSE_ROOT))
 

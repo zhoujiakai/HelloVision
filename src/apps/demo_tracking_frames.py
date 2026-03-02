@@ -5,8 +5,8 @@ from pathlib import Path
 
 import cv2
 
-# Add src to path
-SRC_ROOT = Path(__file__).resolve().parents[1]
+# Add project root to path
+SRC_ROOT = Path(__file__).resolve().parents[2]  # Go up to project root
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
@@ -16,17 +16,17 @@ from wrappers.deepsort_wrapper import DeepSortWrapper, draw_tracks
 
 def main():
     # Initialize YOLOv5 detector
-    yolov5_weights = SRC_ROOT.parent / "thirdparty" / "yolov5" / "weights" / "yolov5m.pt"
+    yolov5_weights = SRC_ROOT / "thirdparty" / "yolov5" / "weights" / "yolov5m.pt"
     detector = YOLOv5Wrapper(weights=yolov5_weights, device="cpu", conf_thres=0.3)
     print(f"YOLOv5 loaded: {detector.names}")
 
     # Initialize DeepSort tracker (n_init=3 requires 3 frames to confirm track)
-    deepsort_weights = SRC_ROOT.parent / "thirdparty" / "deepsort" / "deep_sort" / "deep" / "checkpoint" / "resnet18-5c106cde.pth"
+    deepsort_weights = SRC_ROOT / "thirdparty" / "deepsort" / "deep_sort" / "deep" / "checkpoint" / "resnet18-5c106cde.pth"
     tracker = DeepSortWrapper(model_path=deepsort_weights, device="cpu", n_init=3)
     print("DeepSort loaded (n_init=3)")
 
     # Load frame sequence
-    frames_dir = SRC_ROOT.parent / "thirdparty" / "yolov5" / "data" / "demo_frames"
+    frames_dir = SRC_ROOT / "thirdparty" / "yolov5" / "data" / "demo_frames"
     frame_files = sorted(frames_dir.glob("frame_*.jpg"))
     print(f"\nFound {len(frame_files)} frames")
 
@@ -35,7 +35,7 @@ def main():
         return
 
     # Create output directory for results
-    output_dir = SRC_ROOT.parent / "outputs" / "tracking_frames"
+    output_dir = SRC_ROOT / "outputs" / "tracking_frames"
     output_dir.mkdir(exist_ok=True)
 
     # Process each frame

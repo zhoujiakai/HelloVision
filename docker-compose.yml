@@ -1,0 +1,44 @@
+# HelloVision Docker Compose
+# Run with: docker-compose up
+# For GPU support: docker-compose -f docker-compose.yml -f docker-compose.gpu.yml up
+
+version: '3.8'
+
+services:
+  hellovision:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hellovision
+    volumes:
+      # Mount project directory for development
+      - ./wrappers:/app/wrappers
+      - ./src:/app/src
+      - ./outputs:/app/outputs
+      # Optional: Mount thirdparty if you have local weights
+      - ./thirdparty:/app/thirdparty
+    environment:
+      - PYTHONPATH=/app
+      - CUDA_VISIBLE_DEVICES=""  # Force CPU usage
+    working_dir: /app
+    # Default command - override as needed
+    command: tail -f /dev/null
+    restart: unless-stopped
+
+  # Demo service for running YOLOv5 + DeepSort tracking
+  demo-tracking:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hellovision-demo
+    volumes:
+      - ./wrappers:/app/wrappers
+      - ./src:/app/src
+      - ./outputs:/app/outputs
+      - ./thirdparty:/app/thirdparty
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    command: python src/apps/demo_tracking_frames.py
+    profiles:
+      - demo
